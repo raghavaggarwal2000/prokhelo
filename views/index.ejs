@@ -1,0 +1,45 @@
+<html lang="en" class="h-100">
+    <%- include('./partials/head.ejs') %>
+    <body class="d-flex h-100 text-center text-bg-dark">
+        <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+            <header class="mb-auto">
+              <div>
+                <h3 class="float-md-start mb-0">Prokhelo</h3>
+                <nav class="nav nav-masthead justify-content-center float-md-end">
+                  <a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="/">Home</a>
+                  <a class="nav-link fw-bold py-1 px-0" href="/all_details">Details</a>
+                  <% if(user) { %>
+                    <a class="nav-link fw-bold py-1 px-0" href="/profile">Welcome <%= user.name %>, Profile</a>
+                    <a class="nav-link fw-bold py-1 px-0 btn logout" href="/logout">Logout</a>
+                  <% }else{ %>
+                  <a class="nav-link fw-bold py-1 px-0" href="/login">Login</a>
+                  <a class="nav-link fw-bold py-1 px-0" href="/signup">Signup</a>
+                  <% } %>
+                </nav>
+              </div>
+            </header>
+          
+            <main class="px-3">
+              <h1>Home Page</h1>
+              <p class="lead">You need to login to edit the profile.</p>
+              <p class="lead">
+                <% if(user) { %>
+                  
+                <a href="/profile" class="btn btn-lg btn-light fw-bold border-white bg-white">Profile</a>
+                <% }else{ %>
+                <a href="/login" class="btn btn-lg btn-light fw-bold border-white bg-white">Login</a>
+                <% } %>
+              </p>
+            </main>
+          
+            <footer class="mt-auto text-white-50">
+              <p>Cover template for <a href="https://getbootstrap.com/" class="text-white">Bootstrap</a>, by <a href="https://twitter.com/mdo" class="text-white">@mdo</a>.</p>
+            </footer>
+          </div>
+          
+
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    </body>
+</html>
